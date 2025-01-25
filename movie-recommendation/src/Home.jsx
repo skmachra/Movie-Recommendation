@@ -118,7 +118,13 @@ export default function MovieRecommendationApp() {
       {recommendations && (
         <div className="mt-6 w-full max-w-2xl bg-white shadow-lg rounded-lg p-6">
           <h2 className="text-xl font-bold mb-4">Your Recommendations:</h2>
-          <pre className="whitespace-pre-wrap text-gray-800">{recommendations}</pre>
+          <pre className="whitespace-pre-wrap text-gray-800">
+          <div
+              dangerouslySetInnerHTML={{
+                __html: recommendations.replace(/className/g, "class").replace(/html/g, "").replace(/```/g, ""),
+              }}
+            />
+          </pre>
         </div>
       )}
     </div>
