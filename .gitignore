@@ -1,0 +1,54 @@
+# Node.js specific
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.env
+
+# Python specific
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.env
+venv/
+env/
+*.sqlite3
+db.sqlite3
+migrations/
+
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# OS/System specific
+.DS_Store
+Thumbs.db
+
+# IDEs/Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Testing/Temp files
+coverage/
+*.cover
+*.test
+*.pytest_cache
+.tox/
+
+# Other
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.bak
+*.tmp
