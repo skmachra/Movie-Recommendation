@@ -13,7 +13,7 @@ api_key = os.getenv("MIRA_API_KEY")
 # Initialize the client
 client = MiraClient(config={"API_KEY": api_key})
 
-version = "0.0.2"
+version = "0.0.3"
 input_data = {
     "movie_genre_preferences": "action, comedy",
     "mood": "happy",

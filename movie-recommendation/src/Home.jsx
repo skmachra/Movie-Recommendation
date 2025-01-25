@@ -33,7 +33,7 @@ export default function MovieRecommendationApp() {
 
     try {
       const response = await axios.post(
-        "https://flow-api.mira.network/v1/flows/flows/sunilk/movie-recommendation?version=0.0.2",
+        "https://flow-api.mira.network/v1/flows/flows/sunilk/movie-recommendation?version=0.0.4",
         data,
         config
       );
