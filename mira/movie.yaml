@@ -1,5 +1,5 @@
 # Version format ex. "0.0.1"
-version: "0.0.4"                            # Flow specification version
+version: "0.0.5"                            # Flow specification version
 
 # Basic metadata for the agent
 metadata:
@@ -28,6 +28,11 @@ inputs:
     description: "Provide a list of movies you've recently watched to give the AI context."
     required: false
     example: "Inception, Avengers: Endgame, The Matrix"
+  language_preferences:                                          # Fourth input parameter
+    type: string
+    description: "Specify your preferred language for the movie recommendations."
+    required: false
+    example: "Hindi, English"
   
 # LLM configuration
 model:
@@ -48,7 +53,8 @@ prompt: |
   1. Recommend movies from the user's preferred genres.
   2. Match the suggestions to the user's current mood.
   3. If the user has provided a watch history, avoid recommending movies they've already seen.
-  4. Provide a brief description of each movie and why it fits the user’s preferences.
+  4. If the user has provided langauge preferences, consider them while recommending movies.
+  5. Provide a brief description of each movie and why it fits the user’s preferences.
 
   Structure the response in html(in a div without metaData) and tailwind-css(use className instead of class) with:
   - Movie Title

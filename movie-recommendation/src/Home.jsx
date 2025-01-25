@@ -6,6 +6,7 @@ export default function MovieRecommendationApp() {
   const [watchHistory, setWatchHistory] = useState("");
   const [genrePreferences, setGenrePreferences] = useState("");
   const [recommendations, setRecommendations] = useState(null);
+  const [language, setLanguage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -21,6 +22,7 @@ export default function MovieRecommendationApp() {
         mood,
         watch_history: watchHistory,
         movie_genre_preferences: genrePreferences,
+        language_preferences: language,
       },
     };
 
@@ -33,7 +35,7 @@ export default function MovieRecommendationApp() {
 
     try {
       const response = await axios.post(
-        "https://flow-api.mira.network/v1/flows/flows/sunilk/movie-recommendation?version=0.0.4",
+        "https://flow-api.mira.network/v1/flows/flows/sunilk/movie-recommendation?version=0.0.5",
         data,
         config
       );
@@ -86,6 +88,18 @@ export default function MovieRecommendationApp() {
             placeholder="e.g., Action"
             required
           />
+        </div>
+
+        <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Language Preferences:</label>
+            <input
+                type="text"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+                placeholder="e.g., English"
+                required
+            />
         </div>
 
         <button
