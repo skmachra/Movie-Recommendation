@@ -121,7 +121,7 @@ export default function MovieRecommendationApp() {
           <pre className="whitespace-pre-wrap text-gray-800">
           <div
               dangerouslySetInnerHTML={{
-                __html: recommendations.replace(/className/g, "class").replace(/html/g, "").replace(/```/g, "").substring(recommendations.indexOf('<')),
+                __html: recommendations.substring(recommendations.indexOf('<')).replace(/className/g, "class").replace(/```/g, ""),
               }}
             />
           </pre>
